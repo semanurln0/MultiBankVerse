@@ -4,128 +4,67 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MultiBankVerse Dashboard</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f7fa;
-    }
-
-    header {
-      background-color: #007bff;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-      font-size: 1.5rem;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-around;
-      background-color: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      padding: 0.75rem 0;
-    }
-
-    .navbar button {
-      background: none;
-      border: none;
-      font-size: 1rem;
-      cursor: pointer;
-      color: #333;
-    }
-
-    .swiper-container {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-    }
-
-    .swiper-slide {
-      flex: 0 0 100%;
-      scroll-snap-align: start;
-      padding: 2rem;
-      box-sizing: border-box;
-    }
-
-    .card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      margin-bottom: 1rem;
-    }
-
-    h2 {
-      margin-top: 0;
-      color: #007bff;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    ul li {
-      margin-bottom: 0.5rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    MultiBankVerse
-  </header>
+  <div class="sidebar">
+    <h2>MultiBankVerse</h2>
+    <button onclick="showSlide(0)">Dashboard</button>
+    <button>Login & Register</button>
+    <button>Accounts Balance</button>
+    <button>Transfers</button>
+    <button>Register New Bank</button>
+    <button>Transaction History</button>
+    <button>Profile & Settings</button>
+    <button>Logout</button>
+  </div>
 
-  <nav class="navbar">
-    <button onclick="showSlide(0)">Total Balance</button>
-    <button onclick="showSlide(1)">All Bank Accounts</button>
-  </nav>
+  <div class="main-content">
+    <header>
+      Welcome to MultiBankVerse
+    </header>
 
-  <div class="swiper-container" id="swiper">
-    <!-- Slide 1 -->
-    <div class="swiper-slide">
-      <div class="card">
-        <h2>Total Balance</h2>
-        <p><strong>€ 4,820.00</strong></p>
+    <div class="swiper-container" id="swiper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="card">
+          <h2>Total Balance</h2>
+          <p><strong>€ 4,820.00</strong></p>
+        </div>
+        <div class="card">
+          <h3>Last 5 Transactions</h3>
+          <ul>
+            <li>+ €200.00 - Salary</li>
+            <li>- €35.00 - Grocery</li>
+            <li>- €120.00 - Rent</li>
+            <li>+ €1,000.00 - Bank Transfer</li>
+            <li>- €50.00 - Utilities</li>
+          </ul>
+        </div>
       </div>
-      <div class="card">
-        <h3>Last 5 Transactions</h3>
-        <ul>
-          <li>+ €200.00 - Salary</li>
-          <li>- €35.00 - Grocery</li>
-          <li>- €120.00 - Rent</li>
-          <li>+ €1,000.00 - Bank Transfer</li>
-          <li>- €50.00 - Utilities</li>
-        </ul>
-      </div>
-    </div>
 
-    <!-- Slide 2 -->
-    <div class="swiper-slide">
-      <div class="card">
-        <h2>Bank Accounts</h2>
-        <p>Bank A: €2,400.00</p>
-        <p>Bank B: €1,220.00</p>
-        <p>Bank C: €1,200.00</p>
-      </div>
-      <div class="card">
-        <h3>Last 5 Transactions (All Banks)</h3>
-        <ul>
-          <li>Bank A - + €150.00 - Cashback</li>
-          <li>Bank B - - €30.00 - Online Purchase</li>
-          <li>Bank C - + €500.00 - Deposit</li>
-          <li>Bank A - - €80.00 - Bill Payment</li>
-          <li>Bank B - + €100.00 - Refund</li>
-        </ul>
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <div class="card">
+          <h2>Bank Accounts</h2>
+          <p>Bank A: €2,400.00</p>
+          <p>Bank B: €1,220.00</p>
+          <p>Bank C: €1,200.00</p>
+        </div>
+        <div class="card">
+          <h3>Last 5 Transactions (All Banks)</h3>
+          <ul>
+            <li>Bank A - + €150.00 - Cashback</li>
+            <li>Bank B - - €30.00 - Online Purchase</li>
+            <li>Bank C - + €500.00 - Deposit</li>
+            <li>Bank A - - €80.00 - Bill Payment</li>
+            <li>Bank B - + €100.00 - Refund</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 
-  <script>
-    function showSlide(index) {
-      const swiper = document.getElementById('swiper');
-      swiper.scrollTo({ left: index * swiper.offsetWidth, behavior: 'smooth' });
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
