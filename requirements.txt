@@ -20,6 +20,8 @@ gorunmesi gereken
 
 Uvicorn running on http://127.0.0.1:8000
 -------------------------------------------------------
+ikinci terminalde yazilmasi gerekiyor
+
 cd path/to/MultiBankVerse
 python -m http.server 5500
 
