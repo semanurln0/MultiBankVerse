@@ -3,64 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MultiBankVerse Dashboard</title>
+  <title>MultiBankVerse</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="sidebar">
-    <h2>MultiBankVerse</h2>
-    <button onclick="showSlide(0)">Dashboard</button>
-    <button>Login & Register</button>
-    <button>Accounts Balance</button>
-    <button>Transfers</button>
-    <button>Register New Bank</button>
-    <button>Transaction History</button>
-    <button>Profile & Settings</button>
-    <button>Logout</button>
-  </div>
+  <div class="container">
+    <div class="sidebar">
+      <h2>MultiBankVerse</h2>
+      <button onclick="showSlide(0)">Dashboard</button>
+      <button onclick="toggleForm('loginForm')">Login</button>
+      <button onclick="toggleForm('registerForm')">Register</button>
+      <button onclick="logout()">Logout</button>
+      <button>Accounts Balance</button>
+      <button>Transfers</button>
+      <button>Register New Bank</button>
+      <button>Transaction History</button>
+      <button>Profile & Settings</button>
+    </div>
 
-  <div class="main-content">
-    <header>
-      Welcome to MultiBankVerse
-    </header>
+    <div class="main-content">
+      <header>Welcome to MultiBankVerse</header>
 
-    <div class="swiper-container" id="swiper">
-      <!-- Slide 1 -->
-      <div class="swiper-slide">
-        <div class="card">
-          <h2>Total Balance</h2>
-          <p><strong>€ 4,820.00</strong></p>
+      <!-- Login Form -->
+      <div class="card" id="loginForm" style="display:none;">
+        <h3>Login</h3>
+        <input id="loginEmail" placeholder="Email"><br>
+        <input id="loginPassword" type="password" placeholder="Password"><br>
+        <button onclick="login()">Submit</button>
+      </div>
+
+      <!-- Register Form -->
+      <div class="card" id="registerForm" style="display:none;">
+        <h3>Register</h3>
+        <input id="regName" placeholder="Name"><br>
+        <input id="regEmail" placeholder="Email"><br>
+        <input id="regPassword" type="password" placeholder="Password"><br>
+        <button onclick="register()">Submit</button>
+      </div>
+
+      <!-- Swiper Slides -->
+      <div class="swiper-container" id="swiper">
+        <!-- Slide 1: Dashboard -->
+        <div class="swiper-slide">
+          <div class="card">
+            <h2>Total Balance</h2>
+            <p id="totalBalance"><strong>Loading...</strong></p>
+          </div>
+
+          <div class="card">
+            <h3>Last 5 Transactions</h3>
+            <ul id="transactionList">
+              <!-- Real data injected by script.js -->
+            </ul>
+          </div>
         </div>
-        <div class="card">
-          <h3>Last 5 Transactions</h3>
-          <ul>
-            <li>+ €200.00 - Salary</li>
-            <li>- €35.00 - Grocery</li>
-            <li>- €120.00 - Rent</li>
-            <li>+ €1,000.00 - Bank Transfer</li>
-            <li>- €50.00 - Utilities</li>
-          </ul>
+          <!-- Optional: Another empty card or remove this block -->
+          <div class="card">
+            <h3>More coming soon...</h3>
+            <p>Transactions by bank will be listed here dynamically.</p>
+          </div>
         </div>
       </div>
 
-      <!-- Slide 2 -->
-      <div class="swiper-slide">
-        <div class="card">
-          <h2>Bank Accounts</h2>
-          <p>Bank A: €2,400.00</p>
-          <p>Bank B: €1,220.00</p>
-          <p>Bank C: €1,200.00</p>
-        </div>
-        <div class="card">
-          <h3>Last 5 Transactions (All Banks)</h3>
-          <ul>
-            <li>Bank A - + €150.00 - Cashback</li>
-            <li>Bank B - - €30.00 - Online Purchase</li>
-            <li>Bank C - + €500.00 - Deposit</li>
-            <li>Bank A - - €80.00 - Bill Payment</li>
-            <li>Bank B - + €100.00 - Refund</li>
-          </ul>
-        </div>
+      <!-- Slide Navigation -->
+      <div class="controls">
+        <button onclick="showSlide(0)">Balance</button>
+        <button onclick="showSlide(1)">Accounts</button>
       </div>
     </div>
   </div>

@@ -35,7 +35,7 @@ MultiBankVerse is a modern, modular frontend prototype for a multi-banking web a
 
 🚀 How to Run
 1.Clone or download the repository.
-2.Open index.html in your browser.
+2.Open MBV.html in your browser.
 
 📦 Future Enhancements
 -Backend integration (user data, transaction API)
